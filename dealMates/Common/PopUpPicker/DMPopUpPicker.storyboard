@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Up Picker-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DMPopUpPicker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DMPopUpPicker" customModule="dealMates" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="rrp-lI-ZWx">
+                                <rect key="frame" x="20" y="298.5" width="374" height="299"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eej-Ku-nBt">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="234"/>
+                                        <color key="backgroundColor" red="0.14117647058823529" green="0.12941176470588234" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.23921568627450979" green="0.20784313725490194" blue="0.18823529411764706" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tlf-1M-KbW">
+                                        <rect key="frame" x="0.0" y="249" width="374" height="50"/>
+                                        <color key="backgroundColor" red="0.12549019607843137" green="0.10980392156862745" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="LfO-6L-9Kd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Select">
+                                            <color key="titleColor" red="1" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.23921568627450979" green="0.20784313725490194" blue="0.18823529411764706" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onChooseButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="26p-RK-Jhq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Eej-Ku-nBt" firstAttribute="leading" secondItem="rrp-lI-ZWx" secondAttribute="leading" id="3EL-ij-RoH"/>
+                                    <constraint firstAttribute="trailing" secondItem="Eej-Ku-nBt" secondAttribute="trailing" id="Cw9-wE-d2D"/>
+                                    <constraint firstItem="Eej-Ku-nBt" firstAttribute="top" secondItem="rrp-lI-ZWx" secondAttribute="top" id="GrP-5X-Zzj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tlf-1M-KbW" secondAttribute="bottom" id="MdN-kW-hXo"/>
+                                    <constraint firstItem="Tlf-1M-KbW" firstAttribute="leading" secondItem="rrp-lI-ZWx" secondAttribute="leading" id="Naz-Ch-o3n"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="rrp-lI-ZWx" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="1:3" id="0fP-nV-rkk"/>
+                            <constraint firstItem="rrp-lI-ZWx" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="QzO-fS-okh"/>
+                            <constraint firstItem="rrp-lI-ZWx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="caZ-4E-aWi"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="rrp-lI-ZWx" secondAttribute="trailing" constant="20" id="k9d-xH-ouL"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Ycn-nj-fJd" appends="YES" id="y0s-3j-k55"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="pickerView" destination="Eej-Ku-nBt" id="oxt-Dc-0Sb"/>
+                        <outlet property="selectButton" destination="Tlf-1M-KbW" id="z8m-ci-hFN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ycn-nj-fJd">
+                    <connections>
+                        <action selector="onTouchOutsideOfPicker:" destination="Y6W-OH-hqX" id="8k3-Dl-9m7"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-17" y="42"/>
+        </scene>
+    </scenes>
+</document>

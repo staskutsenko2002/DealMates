@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  dealMates
+
+  Created by Stanislav on 08.05.2023.
+  
+*/
+
+"project.name" = "DealMates";
+
+// MARK: - Tabs
+"home" = "Home";
+"favourites" = "Favourites";
+"create" = "Create";
+"deals" = "Deals";
+"profile" = "Profile";
+
+// MARK: - Authorization
+"first.name" = "First name";
+"last.name" = "Last name";
+"email" = "Email";
+"password" = "Password";
+"repeat.password" = "Repeat password";
+"phone" = "Phone (optional)";
+"birthday" = "Birthday (optional)";
+
+"sign.in" = "Sign in";
+"sign.up" = "Sign up";
+"continue" = "Continue";
+
+"other.signIn" = "or\n sign in with";
+"dont.have.account" = "Don't have account yet?";
+
+// MARK: - Create
+"request.title" = "Request's title";
+"category" = "Category";
+"description" = "Description";
+"price" = "Price";
+
+// MARK: - Profile
+"edit.profile" = "Edit Profile";
+"rate" = "%@ ⭐️";
+"proposals" = "Proposals";
+"requests" = "Requests";
+
+// MARK: - Create
+"create.question" = "What do you want to create?";

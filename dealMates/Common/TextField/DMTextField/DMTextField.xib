@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HandoSoftTrial-Bold.ttf">
+            <string>HandoSoftTrial-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DMTextField" customModule="dealMates" customModuleProvider="target">
+            <connections>
+                <outlet property="contentView" destination="RJu-bg-Ebx" id="5OX-6x-9Qk"/>
+                <outlet property="errorMessageLabel" destination="WAo-pa-InI" id="eey-gc-Luy"/>
+                <outlet property="placeholderLabel" destination="nxn-p6-JH3" id="pK0-k7-oMY"/>
+                <outlet property="textField" destination="qPH-36-k1Y" id="YHu-9o-pM9"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="572" height="94"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJu-bg-Ebx" userLabel="ContentView">
+                    <rect key="frame" x="0.0" y="0.0" width="572" height="94"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPH-36-k1Y" customClass="TreadCustomTextField" customModule="dealMates" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="15" width="572" height="79"/>
+                            <color key="backgroundColor" name="white"/>
+                            <color key="tintColor" red="1" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textColor" name="black"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="black"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </textField>
+                        <label verifyAmbiguity="off" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Placeholder" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxn-p6-JH3">
+                            <rect key="frame" x="15" y="16.5" width="542" height="17.5"/>
+                            <fontDescription key="fontDescription" name="HandoSoftTrial-Bold" family="Hando Soft Trial" pointSize="18"/>
+                            <color key="textColor" name="black"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WAo-pa-InI">
+                            <rect key="frame" x="15" y="99" width="542" height="14"/>
+                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                            <color key="textColor" red="0.92549019607843142" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="text" value=""/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="WAo-pa-InI" secondAttribute="trailing" constant="15" id="1at-Dl-77i"/>
+                        <constraint firstItem="qPH-36-k1Y" firstAttribute="leading" secondItem="RJu-bg-Ebx" secondAttribute="leading" id="7kB-9U-6dR"/>
+                        <constraint firstItem="WAo-pa-InI" firstAttribute="top" secondItem="qPH-36-k1Y" secondAttribute="bottom" constant="5" placeholder="YES" id="7tj-wZ-XAG"/>
+                        <constraint firstItem="qPH-36-k1Y" firstAttribute="top" secondItem="RJu-bg-Ebx" secondAttribute="top" constant="15" id="JYR-oQ-07q"/>
+                        <constraint firstItem="WAo-pa-InI" firstAttribute="leading" secondItem="RJu-bg-Ebx" secondAttribute="leading" constant="15" id="OHp-DN-NqH"/>
+                        <constraint firstAttribute="trailing" secondItem="nxn-p6-JH3" secondAttribute="trailing" constant="15" id="UhT-Bz-mLR"/>
+                        <constraint firstItem="qPH-36-k1Y" firstAttribute="bottom" secondItem="RJu-bg-Ebx" secondAttribute="bottom" id="kYr-RK-iih"/>
+                        <constraint firstItem="qPH-36-k1Y" firstAttribute="trailing" secondItem="RJu-bg-Ebx" secondAttribute="trailing" id="lVK-Jr-EJO"/>
+                        <constraint firstItem="nxn-p6-JH3" firstAttribute="leading" secondItem="RJu-bg-Ebx" secondAttribute="leading" constant="15" id="oYt-4X-b2p"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="RJu-bg-Ebx" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="X3n-Yw-cHk"/>
+                <constraint firstItem="RJu-bg-Ebx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZTm-J5-ugN"/>
+                <constraint firstItem="RJu-bg-Ebx" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="rWR-sE-exv"/>
+                <constraint firstItem="RJu-bg-Ebx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="x83-Bf-Wt7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-531.8840579710145" y="-1207.3660714285713"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
