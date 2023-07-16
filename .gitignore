@@ -1,0 +1,34 @@
+xcschememanagement.plist
+UserInterfaceState.xcuserstate
+Breakpoints_v2.xcbkptlist
+
+## Build generated
+build/
+DerivedData
+
+xcuserdata
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.xcuserstate
+*.dSYM.zip
+*.dSYM
+.DS_Store
+.idea/
+
+## Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+
+# CocoaPods
+Pods/
+*.xcworkspace
+*.lock
+/dealMates/dealMates.xcworkspace/xcshareddata/xcschemes/dealMates.xcscheme
