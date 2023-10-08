@@ -47,7 +47,7 @@ final class RequestListViewModel {
                 }
             }, receiveValue: { [weak self] response in
                 guard let self else { return }
-                self.cellModels = response.result.map(map(request:))
+                self.cellModels = response.result.map(self.map(request:))
             })
             .store(in: &cancellables)
     }

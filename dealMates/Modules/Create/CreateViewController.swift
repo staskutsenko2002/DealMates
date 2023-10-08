@@ -102,28 +102,28 @@ private extension CreateViewController {
                 guard let self else { return }
                 switch status {
                 case .error(let message):
-                    stopLoading()
+                    self.stopLoading()
                     let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(action)
-                    present(alert, animated: true)
+                    self.present(alert, animated: true)
                     
                 case .created:
-                    let alert = UIAlertController(title: "Success!", message: "Creation went successfully!", preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Success!", message: "Creation went successful!", preferredStyle: .alert)
                     let action = UIAlertAction(title: "OK", style: .default)
                     alert.addAction(action)
-                    present(alert, animated: true)
+                    self.present(alert, animated: true)
                     
-                    titleField.input = ""
-                    priceField.input = ""
-                    categoryField.input = ""
-                    descriptionField.input = ""
-                    stopLoading()
+                    self.titleField.input = ""
+                    self.priceField.input = ""
+                    self.categoryField.input = ""
+                    self.descriptionField.input = ""
+                    self.stopLoading()
                     
                 case .idle:
                     break
                 case .loading:
-                    startLoading()
+                    self.startLoading()
                 }
             }
         }.store(in: &cancellables)

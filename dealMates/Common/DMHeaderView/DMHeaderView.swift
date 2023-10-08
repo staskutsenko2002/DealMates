@@ -22,9 +22,11 @@ final class DMHeaderView: UIView {
     }()
     
     private let leftItem: HeaderItem?
+    private let rightItem: HeaderItem?
     
-    init(title: String? = nil, leftItem: HeaderItem? = nil) {
+    init(title: String? = nil, leftItem: HeaderItem? = nil, rightItem: HeaderItem? = nil) {
         self.leftItem = leftItem
+        self.rightItem = rightItem
         super.init(frame: .zero)
         setupLayout()
         titleLabel.text = title
@@ -37,6 +39,20 @@ final class DMHeaderView: UIView {
             
             add(view: button, constraints: [
                 button.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+                button.heightAnchor.constraint(equalToConstant: 16),
+                button.widthAnchor.constraint(equalToConstant: 16),
+                button.centerYAnchor.constraint(equalTo: centerYAnchor)
+            ])
+        }
+        
+        if let rightItem {
+            let button = UIButton()
+            button.setImage(rightItem.image, for: .normal)
+            button.imageView?.contentMode = .scaleAspectFit
+            button.addTarget(self, action: #selector(didPressLeft), for: .touchUpInside)
+            
+            add(view: button, constraints: [
+                button.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
                 button.heightAnchor.constraint(equalToConstant: 16),
                 button.widthAnchor.constraint(equalToConstant: 16),
                 button.centerYAnchor.constraint(equalTo: centerYAnchor)
@@ -64,5 +80,9 @@ final class DMHeaderView: UIView {
     
     @objc private func didPressLeft() {
         leftItem?.action()
+    }
+    
+    @objc private func didPressRight() {
+        rightItem?.action()
     }
 }

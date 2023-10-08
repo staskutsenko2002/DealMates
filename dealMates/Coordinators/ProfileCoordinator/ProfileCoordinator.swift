@@ -14,9 +14,9 @@ final class ProfileCoordinator {
     private lazy var navigationController = makeNavigationController()
     private lazy var profileViewController = makeProfileViewController(didBecomeExecutor: self.didBecomeExecutor)
     
-    let didBecomeExecutor: CommonAction
+    let didBecomeExecutor: VoidCallback
     
-    init(didBecomeExecutor: @escaping CommonAction) {
+    init(didBecomeExecutor: @escaping VoidCallback) {
         self.didBecomeExecutor = didBecomeExecutor
     }
     
@@ -33,7 +33,7 @@ private extension ProfileCoordinator {
         return navigationController
     }
     
-    func makeProfileViewController(didBecomeExecutor: @escaping CommonAction) -> UIViewController {
+    func makeProfileViewController(didBecomeExecutor: @escaping VoidCallback) -> UIViewController {
         let viewModel = ProfileViewModel(
             networkService: NetworkService.shared,
             didBecomeExecutor: didBecomeExecutor

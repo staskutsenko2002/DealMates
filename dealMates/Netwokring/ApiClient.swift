@@ -49,7 +49,7 @@ class ApiClient {
                     return
                 }
                 
-                let cancellable = provider.request(target, callbackQueue: callbackQueue) { [weak self] result in
+                let cancellable = self.provider.request(target, callbackQueue: callbackQueue) { [weak self] result in
                     guard let self else { return }
                     
                     switch result {
@@ -74,7 +74,7 @@ class ApiClient {
                         promise(.failure(error))
                     }
                 }
-            }).store(in: &cancellables)
+            }).store(in: &self.cancellables)
         }
     }
     

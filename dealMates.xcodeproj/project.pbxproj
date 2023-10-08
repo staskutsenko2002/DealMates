@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F6388A5296781BF844CD5F7 /* Pods_dealMates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2F5272BC810BFF8B9342ED /* Pods_dealMates.framework */; };
 		8504ED582A353811001BD2D7 /* DealMatesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504ED572A353811001BD2D7 /* DealMatesTests.swift */; };
 		8504ED5F2A353AE0001BD2D7 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8504ED5E2A353AE0001BD2D7 /* DateFormatter+Extension.swift */; };
 		8512C1562A2C8F9600CF8DC1 /* StringValidationRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8512C1552A2C8F9600CF8DC1 /* StringValidationRules.swift */; };
@@ -83,6 +82,11 @@
 		85AE90002A0694A200FF7773 /* HandoSoftTrial-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85AE8FFE2A06949B00FF7773 /* HandoSoftTrial-Bold.ttf */; };
 		85AE90012A0694A700FF7773 /* HandoSoftTrial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85AE8FFF2A06949B00FF7773 /* HandoSoftTrial-Regular.ttf */; };
 		85B143032A095CE000449B87 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B143022A095CE000449B87 /* R.generated.swift */; };
+		85B661A32AD2F83E00EDD3EF /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A22AD2F83E00EDD3EF /* SearchViewController.swift */; };
+		85B661A52AD2F85800EDD3EF /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A42AD2F85800EDD3EF /* SearchViewModel.swift */; };
+		85B661A72AD2FAC800EDD3EF /* DMSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */; };
+		85B661AA2AD3029200EDD3EF /* DMHomeSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */; };
+		85B661AC2AD3082600EDD3EF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661AB2AD3082600EDD3EF /* String+Extension.swift */; };
 		85E1B66C2A3B88EA00221AF6 /* ProposalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */; };
 		85E1B66E2A3B88FF00221AF6 /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */; };
 		85E1B6712A3BA13900221AF6 /* CreateChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */; };
@@ -99,6 +103,7 @@
 		85F9E5382A3123DB006F9A18 /* PageStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E5372A3123DB006F9A18 /* PageStateView.swift */; };
 		85F9E53B2A312943006F9A18 /* FavouriteCoodinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E53A2A312943006F9A18 /* FavouriteCoodinator.swift */; };
 		85F9E53D2A312A23006F9A18 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F9E53C2A312A23006F9A18 /* FavouriteViewModel.swift */; };
+		97FA1EDED4A0698AB56C6A03 /* Pods_dealMates.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FCA84D2D9A3215CB1D5192E /* Pods_dealMates.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,8 +117,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E8D6DD31DE8DBF0F2490CBA /* Pods-dealMates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealMates.debug.xcconfig"; path = "Target Support Files/Pods-dealMates/Pods-dealMates.debug.xcconfig"; sourceTree = "<group>"; };
-		7945AAA4149748E56EE89834 /* Pods-dealMates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealMates.release.xcconfig"; path = "Target Support Files/Pods-dealMates/Pods-dealMates.release.xcconfig"; sourceTree = "<group>"; };
+		41AFD95C2BA48182630B775D /* Pods-dealMates.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealMates.release.xcconfig"; path = "Target Support Files/Pods-dealMates/Pods-dealMates.release.xcconfig"; sourceTree = "<group>"; };
+		6FCA84D2D9A3215CB1D5192E /* Pods_dealMates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dealMates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8504ED552A353811001BD2D7 /* DealMatesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DealMatesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8504ED572A353811001BD2D7 /* DealMatesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealMatesTests.swift; sourceTree = "<group>"; };
 		8504ED5E2A353AE0001BD2D7 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
@@ -196,6 +201,11 @@
 		85AE8FFE2A06949B00FF7773 /* HandoSoftTrial-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HandoSoftTrial-Bold.ttf"; sourceTree = "<group>"; };
 		85AE8FFF2A06949B00FF7773 /* HandoSoftTrial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HandoSoftTrial-Regular.ttf"; sourceTree = "<group>"; };
 		85B143022A095CE000449B87 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		85B661A22AD2F83E00EDD3EF /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		85B661A42AD2F85800EDD3EF /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSearchHeaderView.swift; sourceTree = "<group>"; };
+		85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeSearchHeaderView.swift; sourceTree = "<group>"; };
+		85B661AB2AD3082600EDD3EF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewController.swift; sourceTree = "<group>"; };
 		85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChooseViewController.swift; sourceTree = "<group>"; };
@@ -212,7 +222,7 @@
 		85F9E5372A3123DB006F9A18 /* PageStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStateView.swift; sourceTree = "<group>"; };
 		85F9E53A2A312943006F9A18 /* FavouriteCoodinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCoodinator.swift; sourceTree = "<group>"; };
 		85F9E53C2A312A23006F9A18 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
-		CB2F5272BC810BFF8B9342ED /* Pods_dealMates.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dealMates.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5DCC7AF31A764BC2DDD3290 /* Pods-dealMates.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dealMates.debug.xcconfig"; path = "Target Support Files/Pods-dealMates/Pods-dealMates.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +237,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F6388A5296781BF844CD5F7 /* Pods_dealMates.framework in Frameworks */,
+				97FA1EDED4A0698AB56C6A03 /* Pods_dealMates.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -237,18 +247,10 @@
 		224EA55C9B20E98BA02E36CF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0E8D6DD31DE8DBF0F2490CBA /* Pods-dealMates.debug.xcconfig */,
-				7945AAA4149748E56EE89834 /* Pods-dealMates.release.xcconfig */,
+				B5DCC7AF31A764BC2DDD3290 /* Pods-dealMates.debug.xcconfig */,
+				41AFD95C2BA48182630B775D /* Pods-dealMates.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		38AE3D8A050E61C163CFF3F4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				CB2F5272BC810BFF8B9342ED /* Pods_dealMates.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8504ED562A353811001BD2D7 /* DealMatesTests */ = {
@@ -352,6 +354,7 @@
 			children = (
 				857F1B1E2A100160004A97CC /* HomeViewController.swift */,
 				8512C15D2A2CC27800CF8DC1 /* HomeViewModel.swift */,
+				85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 		857F1B2C2A1004B2004A97CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				85B661A12AD2F82E00EDD3EF /* Search */,
 				85E1B6802A3C994500221AF6 /* EditProfile */,
 				85E1B66F2A3BA11200221AF6 /* CreateChoose */,
 				85E1B66A2A3B88D000221AF6 /* Proposal */,
@@ -431,6 +435,7 @@
 				8580ED582A33EE5E004DFFCC /* Codable+Extension.swift */,
 				85A8A8332A37B57500EC47B2 /* Array+Extension.swift */,
 				85A8A8352A37B60500EC47B2 /* UIStoryboard+Extension.swift */,
+				85B661AB2AD3082600EDD3EF /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,7 +517,7 @@
 				8504ED562A353811001BD2D7 /* DealMatesTests */,
 				85AE8FD12A06865C00FF7773 /* Products */,
 				224EA55C9B20E98BA02E36CF /* Pods */,
-				38AE3D8A050E61C163CFF3F4 /* Frameworks */,
+				9CA4679DEA1D977CDFEF17F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -539,12 +544,7 @@
 				8584B0AB2A093C2C00CD44AC /* Common */,
 				857F1B2C2A1004B2004A97CC /* Modules */,
 				85AE8FEA2A06873800FF7773 /* TabBar */,
-				85AE8FE92A06872E00FF7773 /* AppCoordinator */,
-				853B4F322A2B700F00F6697D /* AuthCoodrinator */,
-				8512C15A2A2CC1AA00CF8DC1 /* HomeCoordinator */,
-				85F9E5392A312920006F9A18 /* FavouriteCoordinator */,
-				85A8A83F2A37BF8800EC47B2 /* CreateCoordinator */,
-				85E1B67B2A3C5ABF00221AF6 /* ProfileCoordinator */,
+				85B661A02AD2F72900EDD3EF /* Coordinators */,
 				85AE8FF72A06925F00FF7773 /* Resource */,
 				85AE8FDE2A06865E00FF7773 /* LaunchScreen.storyboard */,
 				85AE8FE12A06865E00FF7773 /* Info.plist */,
@@ -611,6 +611,29 @@
 				85AE8FFF2A06949B00FF7773 /* HandoSoftTrial-Regular.ttf */,
 			);
 			path = fonts;
+			sourceTree = "<group>";
+		};
+		85B661A02AD2F72900EDD3EF /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				85AE8FE92A06872E00FF7773 /* AppCoordinator */,
+				853B4F322A2B700F00F6697D /* AuthCoodrinator */,
+				8512C15A2A2CC1AA00CF8DC1 /* HomeCoordinator */,
+				85F9E5392A312920006F9A18 /* FavouriteCoordinator */,
+				85A8A83F2A37BF8800EC47B2 /* CreateCoordinator */,
+				85E1B67B2A3C5ABF00221AF6 /* ProfileCoordinator */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		85B661A12AD2F82E00EDD3EF /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				85B661A22AD2F83E00EDD3EF /* SearchViewController.swift */,
+				85B661A42AD2F85800EDD3EF /* SearchViewModel.swift */,
+				85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		85E1B66A2A3B88D000221AF6 /* Proposal */ = {
@@ -685,6 +708,14 @@
 			path = FavouriteCoordinator;
 			sourceTree = "<group>";
 		};
+		9CA4679DEA1D977CDFEF17F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FCA84D2D9A3215CB1D5192E /* Pods_dealMates.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -710,12 +741,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 85AE8FE42A06865E00FF7773 /* Build configuration list for PBXNativeTarget "dealMates" */;
 			buildPhases = (
-				5CFA358EF776FD92EBEA36FA /* [CP] Check Pods Manifest.lock */,
+				B2FBA39C2154471BA4455CE1 /* [CP] Check Pods Manifest.lock */,
 				85AE8FEF2A068A2100FF7773 /* R.swift */,
 				85AE8FCC2A06865C00FF7773 /* Sources */,
 				85AE8FCD2A06865C00FF7773 /* Frameworks */,
 				85AE8FCE2A06865C00FF7773 /* Resources */,
-				991DA698580AA3E0A17680EA /* [CP] Embed Pods Frameworks */,
+				1C311F4A3CDB9F95687AAA02 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -789,26 +820,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		5CFA358EF776FD92EBEA36FA /* [CP] Check Pods Manifest.lock */ = {
+		1C311F4A3CDB9F95687AAA02 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-dealMates-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85AE8FEF2A068A2100FF7773 /* R.swift */ = {
@@ -831,21 +857,26 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
 		};
-		991DA698580AA3E0A17680EA /* [CP] Embed Pods Frameworks */ = {
+		B2FBA39C2154471BA4455CE1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dealMates-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dealMates/Pods-dealMates-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -894,6 +925,7 @@
 				8562A13D2A33EDA700A3E36A /* StorageService.swift in Sources */,
 				85F9E53D2A312A23006F9A18 /* FavouriteViewModel.swift in Sources */,
 				8562A13B2A33E82700A3E36A /* UITableView+Extension.swift in Sources */,
+				85B661A52AD2F85800EDD3EF /* SearchViewModel.swift in Sources */,
 				85AE8FEC2A06874C00FF7773 /* TabController.swift in Sources */,
 				85F9E52E2A310C3E006F9A18 /* ProposalTarget.swift in Sources */,
 				857F1B2B2A100366004A97CC /* ProfileViewController.swift in Sources */,
@@ -918,6 +950,7 @@
 				857F1B162A0FB73B004A97CC /* SignInViewModel.swift in Sources */,
 				85A8A8482A37DDAE00EC47B2 /* NetworkService+Profile.swift in Sources */,
 				85E1B67A2A3BB05C00221AF6 /* NetworkService+Creation.swift in Sources */,
+				85B661AC2AD3082600EDD3EF /* String+Extension.swift in Sources */,
 				85AE8FD42A06865C00FF7773 /* AppDelegate.swift in Sources */,
 				853B4F222A2B474500F6697D /* DynamicURLMultiTarget.swift in Sources */,
 				857F1B282A1002F7004A97CC /* DealListViewController.swift in Sources */,
@@ -937,10 +970,13 @@
 				85B143032A095CE000449B87 /* R.generated.swift in Sources */,
 				857F1B352A1006CC004A97CC /* UIView+Extension.swift in Sources */,
 				85A8A8412A37BFA300EC47B2 /* CreateCoordinator.swift in Sources */,
+				85B661AA2AD3029200EDD3EF /* DMHomeSearchHeaderView.swift in Sources */,
 				8512C15C2A2CC1BC00CF8DC1 /* HomeCoordinator.swift in Sources */,
+				85B661A72AD2FAC800EDD3EF /* DMSearchHeaderView.swift in Sources */,
 				85A8A84A2A37DDCF00EC47B2 /* ProfileResponse.swift in Sources */,
 				85F9E5342A31151E006F9A18 /* Constants.swift in Sources */,
 				853B4F292A2B5B8400F6697D /* AuthTargetParams.swift in Sources */,
+				85B661A32AD2F83E00EDD3EF /* SearchViewController.swift in Sources */,
 				85A8A8272A37AF5C00EC47B2 /* CreateViewModel.swift in Sources */,
 				85A8A83E2A37BA0500EC47B2 /* DMTextView.swift in Sources */,
 				8562A1372A33D7BF00A3E36A /* RequestTarget.swift in Sources */,
@@ -1123,7 +1159,7 @@
 		};
 		85AE8FE52A06865E00FF7773 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E8D6DD31DE8DBF0F2490CBA /* Pods-dealMates.debug.xcconfig */;
+			baseConfigurationReference = B5DCC7AF31A764BC2DDD3290 /* Pods-dealMates.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1151,7 +1187,7 @@
 		};
 		85AE8FE62A06865E00FF7773 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7945AAA4149748E56EE89834 /* Pods-dealMates.release.xcconfig */;
+			baseConfigurationReference = 41AFD95C2BA48182630B775D /* Pods-dealMates.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -32,7 +32,7 @@ class NetworkService: NetworkServiceToken {
     
     private init() {
         initApiClient()
-        networkBaseURL = URL(string: "https://dealmates.net/api")
+        networkBaseURL = URL(string: "https://app-dealmates-neu.azurewebsites.net/api")
     }
     
     func update(token: String) {

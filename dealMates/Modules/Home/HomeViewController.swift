@@ -10,13 +10,18 @@ import UIKit
 typealias SegmentController = (title: String, controller: UIViewController)
 
 final class HomeViewController: UIViewController {
-    
+    // MARK: - Properties
     private let viewModel: HomeViewModel
     private let viewControllers: [SegmentController]
     private var currentElementIndex: Int
     
-    private let headerView: DMHeaderView = {
-        let view = DMHeaderView(title: AppText.projectName())
+    // MARK: - UI
+    private lazy var headerView: DMHomeSearchHeaderView = {
+        let view = DMHomeSearchHeaderView()
+        view.input = .init(title: AppText.projectName(),
+                           shouldReturnAction:  { [weak self] query in
+            self?.viewModel.openSearch(query: query)
+        })
         return view
     }()
     
@@ -29,10 +34,9 @@ final class HomeViewController: UIViewController {
     
     private let containerView = UIView()
     
-    init(
-        viewModel: HomeViewModel,
-        viewControllers: [SegmentController]
-    ) {
+    // MARK: - Life cycle
+    init(viewModel: HomeViewModel,
+         viewControllers: [SegmentController]) {
         self.viewModel = viewModel
         self.viewControllers = viewControllers
         self.currentElementIndex = 0

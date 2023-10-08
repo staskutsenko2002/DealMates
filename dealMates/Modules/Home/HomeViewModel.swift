@@ -16,8 +16,16 @@ final class HomeViewModel {
     
     private let networkService: NetworkServiceUserInfo
     
-    init(networkService: NetworkServiceUserInfo) {
+    // MARK: - Callbacks
+    private let didPressSearchCallback: StringCallback
+    
+    init(networkService: NetworkServiceUserInfo, didPressSearchCallback: @escaping StringCallback) {
         self.networkService = networkService
+        self.didPressSearchCallback = didPressSearchCallback
         self.title = AppText.home()
+    }
+    
+    func openSearch(query: String) {
+        didPressSearchCallback(query)
     }
 }

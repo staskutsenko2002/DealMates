@@ -12,5 +12,6 @@ typealias AppColor = R.color
 typealias AppText = R.string.localizable
 
 
-typealias CommonAction = (() -> Void)
+typealias VoidCallback = (() -> Void)
+typealias StringCallback = ((String) -> Void)
 

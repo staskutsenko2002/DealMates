@@ -59,7 +59,7 @@ final class ProposalListViewModel {
                     }
                 }, receiveValue: { [weak self] response in
                     guard let self else { return }
-                    self.cellModels = response.result.map(map(proposal:))
+                    self.cellModels = response.result.map(self.map(proposal:))
                 })
                 .store(in: &cancellables)
         } else {
@@ -80,7 +80,7 @@ final class ProposalListViewModel {
                     }
                 }, receiveValue: { [weak self] response in
                     guard let self else { return }
-                    self.cellModels = response.result.map(map(likeProposal:))
+                    self.cellModels = response.result.map(self.map(likeProposal:))
                 })
                 .store(in: &cancellables)
         }
@@ -168,7 +168,7 @@ final class ProposalListViewModel {
                     self.status = .error(message: error.errorDescription ?? "")
                 }
             } receiveValue: { [weak self] response in
-                guard let self, let index = cellModels.firstIndex(where: { $0.id == proposalId }) else { return }
+                guard let self, let index = self.cellModels.firstIndex(where: { $0.id == proposalId }) else { return }
                 self.cellModels[index].likeId = response.result
             }.store(in: &cancellables)
 
@@ -188,7 +188,7 @@ final class ProposalListViewModel {
                     self.status = .error(message: error.errorDescription ?? "")
                 }
             } receiveValue: { [weak self] _ in
-                guard let self, let index = cellModels.firstIndex(where: { $0.id == proposalId }) else { return }
+                guard let self, let index = self.cellModels.firstIndex(where: { $0.id == proposalId }) else { return }
                 self.cellModels[index].likeId = nil
                 self.cellModels.remove(at: index)
                 self.onRemoveLiked.send()

@@ -25,7 +25,12 @@ private extension HomeCoordinator {
     }
     
     func makeHomeViewController() -> UIViewController {
-        let viewModel = HomeViewModel(networkService: NetworkService.shared)
+        let viewModel = HomeViewModel(networkService: NetworkService.shared,
+                                      didPressSearchCallback: { [weak self] query in
+            guard let self else { return }
+            let viewController = self.makeSearchViewController(query: query)
+            self.navigationController.pushViewController(viewController, animated: true)
+        })
         let viewController = HomeViewController(
             viewModel: viewModel,
             viewControllers: [
@@ -58,6 +63,12 @@ private extension HomeCoordinator {
     func makeProposalViewController(cellModel: ProposalCellModel) -> UIViewController {
         let viewModel = ProposalViewModel(proposal: cellModel)
         let viewController = ProposalViewController(viewModel: viewModel)
+        return viewController
+    }
+    
+    func makeSearchViewController(query: String) -> UIViewController {
+        let viewModel = SearchViewModel(query: query)
+        let viewController = SearchViewController(viewModel: viewModel)
         return viewController
     }
 }

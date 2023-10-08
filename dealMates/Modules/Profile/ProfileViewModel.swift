@@ -15,7 +15,7 @@ final class ProfileViewModel {
     @Published var status: PageStatus = .idle
     let didUpdateProfile = PassthroughSubject<ProfileModel, Never>()
     
-    let didBecomeExecutor: CommonAction
+    let didBecomeExecutor: VoidCallback
     var didPressEditProfile: ((ProfileModel) -> ())?
     
     var isExecutor: Bool {
@@ -25,10 +25,8 @@ final class ProfileViewModel {
     private var cancellables = Set<AnyCancellable>()
     private let networkService: NetworkServiceUserInfo & NetworkServiceProfile
     
-    init(
-        networkService: NetworkServiceUserInfo & NetworkServiceProfile,
-        didBecomeExecutor: @escaping CommonAction
-    ) {
+    init(networkService: NetworkServiceUserInfo & NetworkServiceProfile,
+         didBecomeExecutor: @escaping VoidCallback) {
         self.networkService = networkService
         self.didBecomeExecutor = didBecomeExecutor
         self.title = AppText.profile()

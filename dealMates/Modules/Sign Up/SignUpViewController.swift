@@ -195,7 +195,7 @@ private extension SignUpViewController {
         secondTrailingConstraint.isActive = isActive
     }
     
-    func showAlert(type: AlertType, completion: CommonAction? = nil) {
+    func showAlert(type: AlertType, completion: VoidCallback? = nil) {
         
         var alert: UIAlertController
         
