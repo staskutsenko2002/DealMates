@@ -108,7 +108,7 @@ private extension SearchViewController {
     }
     
     func filter() {
-        
+        viewModel.pressFilter()
     }
 }
 

@@ -42,7 +42,15 @@ extension Constants {
 
 extension Constants {
     enum Sizes {
+        /// 40
+        static let medium: CGFloat = 40
+        /// 80
+        static let mediumPlus: CGFloat = 80
+        /// 100
+        static let big: CGFloat = 100
+        /// 150
+        static let bigPlus: CGFloat = 150
         /// 200
-        static let big: CGFloat = 200
+        static let xBig: CGFloat = 200
     }
 }

@@ -115,7 +115,7 @@ struct R: Rswift.Validatable {
   }
   #endif
 
-  /// This `R.color` struct is generated, and contains static references to 7 colors.
+  /// This `R.color` struct is generated, and contains static references to 8 colors.
   struct color {
     /// Color `AccentColor`.
     static let accentColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AccentColor")
@@ -125,6 +125,8 @@ struct R: Rswift.Validatable {
     static let black = Rswift.ColorResource(bundle: R.hostingBundle, name: "black")
     /// Color `lightGray`.
     static let lightGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "lightGray")
+    /// Color `mediumLightGray`.
+    static let mediumLightGray = Rswift.ColorResource(bundle: R.hostingBundle, name: "mediumLightGray")
     /// Color `red`.
     static let red = Rswift.ColorResource(bundle: R.hostingBundle, name: "red")
     /// Color `superLightGray`.
@@ -165,6 +167,15 @@ struct R: Rswift.Validatable {
     @available(iOS 11.0, *)
     static func lightGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
       return UIKit.UIColor(resource: R.color.lightGray, compatibleWith: traitCollection)
+    }
+    #endif
+
+    #if os(iOS) || os(tvOS)
+    /// `UIColor(named: "mediumLightGray", bundle: ..., traitCollection: ...)`
+    @available(tvOS 11.0, *)
+    @available(iOS 11.0, *)
+    static func mediumLightGray(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+      return UIKit.UIColor(resource: R.color.mediumLightGray, compatibleWith: traitCollection)
     }
     #endif
 
@@ -224,6 +235,14 @@ struct R: Rswift.Validatable {
     @available(watchOSApplicationExtension 4.0, *)
     static func lightGray(_: Void = ()) -> UIKit.UIColor? {
       return UIKit.UIColor(named: R.color.lightGray.name)
+    }
+    #endif
+
+    #if os(watchOS)
+    /// `UIColor(named: "mediumLightGray", bundle: ..., traitCollection: ...)`
+    @available(watchOSApplicationExtension 4.0, *)
+    static func mediumLightGray(_: Void = ()) -> UIKit.UIColor? {
+      return UIKit.UIColor(named: R.color.mediumLightGray.name)
     }
     #endif
 
@@ -521,10 +540,14 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 27 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 42 localization keys.
     struct localizable {
       /// Value: %@ ⭐️
       static let rate = Rswift.StringResource(key: "rate", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Add Photos
+      static let addPhotosButton = Rswift.StringResource(key: "addPhotos.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Apply
+      static let filterApplyButton = Rswift.StringResource(key: "filter.apply.button", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Birthday (optional)
       static let birthday = Rswift.StringResource(key: "birthday", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Category
@@ -533,6 +556,8 @@ struct R: Rswift.Validatable {
       static let `continue` = Rswift.StringResource(key: "continue", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Create
       static let create = Rswift.StringResource(key: "create", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Currency
+      static let filterCurrency = Rswift.StringResource(key: "filter.currency", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: DealMates
       static let projectName = Rswift.StringResource(key: "project.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Deals
@@ -545,26 +570,48 @@ struct R: Rswift.Validatable {
       static let editProfile = Rswift.StringResource(key: "edit.profile", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Email
       static let email = Rswift.StringResource(key: "email", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Experience
+      static let filterExperience = Rswift.StringResource(key: "filter.experience", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Favourites
       static let favourites = Rswift.StringResource(key: "favourites", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Filters
+      static let filterTitle = Rswift.StringResource(key: "filter.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: First name
       static let firstName = Rswift.StringResource(key: "first.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Home
       static let home = Rswift.StringResource(key: "home", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: I'm looking for...
+      static let searchPlaceholder = Rswift.StringResource(key: "search.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Last name
       static let lastName = Rswift.StringResource(key: "last.name", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Max Experience
+      static let filterMaxExperience = Rswift.StringResource(key: "filter.maxExperience", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Max Price
+      static let filterMaxPrice = Rswift.StringResource(key: "filter.maxPrice", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Min Experience
+      static let filterMinExperience = Rswift.StringResource(key: "filter.minExperience", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Min Price
+      static let filterMinPrice = Rswift.StringResource(key: "filter.minPrice", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Okay
+      static let okay = Rswift.StringResource(key: "okay", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Password
       static let password = Rswift.StringResource(key: "password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Phone (optional)
       static let phone = Rswift.StringResource(key: "phone", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Price
+      static let filterPrice = Rswift.StringResource(key: "filter.price", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Price
       static let price = Rswift.StringResource(key: "price", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Profile
       static let profile = Rswift.StringResource(key: "profile", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Proposal
+      static let filterProposal = Rswift.StringResource(key: "filter.proposal", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Proposals
       static let proposals = Rswift.StringResource(key: "proposals", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Repeat password
       static let repeatPassword = Rswift.StringResource(key: "repeat.password", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Request
+      static let filterRequest = Rswift.StringResource(key: "filter.request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Request's title
       static let requestTitle = Rswift.StringResource(key: "request.title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Requests
@@ -573,6 +620,8 @@ struct R: Rswift.Validatable {
       static let signIn = Rswift.StringResource(key: "sign.in", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Sign up
       static let signUp = Rswift.StringResource(key: "sign.up", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Title
+      static let createTitlePlaceholder = Rswift.StringResource(key: "create.title.placeholder", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: What do you want to create?
       static let createQuestion = Rswift.StringResource(key: "create.question", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: or  sign in with
@@ -591,6 +640,32 @@ struct R: Rswift.Validatable {
 
         let format = NSLocalizedString("rate", bundle: bundle, comment: "")
         return String(format: format, locale: locale, value1)
+      }
+
+      /// Value: Add Photos
+      static func addPhotosButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("addPhotos.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "addPhotos.button"
+        }
+
+        return NSLocalizedString("addPhotos.button", bundle: bundle, comment: "")
+      }
+
+      /// Value: Apply
+      static func filterApplyButton(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.apply.button", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.apply.button"
+        }
+
+        return NSLocalizedString("filter.apply.button", bundle: bundle, comment: "")
       }
 
       /// Value: Birthday (optional)
@@ -643,6 +718,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("create", bundle: bundle, comment: "")
+      }
+
+      /// Value: Currency
+      static func filterCurrency(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.currency", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.currency"
+        }
+
+        return NSLocalizedString("filter.currency", bundle: bundle, comment: "")
       }
 
       /// Value: DealMates
@@ -723,6 +811,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("email", bundle: bundle, comment: "")
       }
 
+      /// Value: Experience
+      static func filterExperience(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.experience", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.experience"
+        }
+
+        return NSLocalizedString("filter.experience", bundle: bundle, comment: "")
+      }
+
       /// Value: Favourites
       static func favourites(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -734,6 +835,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("favourites", bundle: bundle, comment: "")
+      }
+
+      /// Value: Filters
+      static func filterTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.title"
+        }
+
+        return NSLocalizedString("filter.title", bundle: bundle, comment: "")
       }
 
       /// Value: First name
@@ -762,6 +876,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("home", bundle: bundle, comment: "")
       }
 
+      /// Value: I'm looking for...
+      static func searchPlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("search.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "search.placeholder"
+        }
+
+        return NSLocalizedString("search.placeholder", bundle: bundle, comment: "")
+      }
+
       /// Value: Last name
       static func lastName(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -773,6 +900,71 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("last.name", bundle: bundle, comment: "")
+      }
+
+      /// Value: Max Experience
+      static func filterMaxExperience(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.maxExperience", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.maxExperience"
+        }
+
+        return NSLocalizedString("filter.maxExperience", bundle: bundle, comment: "")
+      }
+
+      /// Value: Max Price
+      static func filterMaxPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.maxPrice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.maxPrice"
+        }
+
+        return NSLocalizedString("filter.maxPrice", bundle: bundle, comment: "")
+      }
+
+      /// Value: Min Experience
+      static func filterMinExperience(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.minExperience", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.minExperience"
+        }
+
+        return NSLocalizedString("filter.minExperience", bundle: bundle, comment: "")
+      }
+
+      /// Value: Min Price
+      static func filterMinPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.minPrice", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.minPrice"
+        }
+
+        return NSLocalizedString("filter.minPrice", bundle: bundle, comment: "")
+      }
+
+      /// Value: Okay
+      static func okay(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("okay", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "okay"
+        }
+
+        return NSLocalizedString("okay", bundle: bundle, comment: "")
       }
 
       /// Value: Password
@@ -802,6 +994,19 @@ struct R: Rswift.Validatable {
       }
 
       /// Value: Price
+      static func filterPrice(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.price", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.price"
+        }
+
+        return NSLocalizedString("filter.price", bundle: bundle, comment: "")
+      }
+
+      /// Value: Price
       static func price(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("price", bundle: hostingBundle, comment: "")
@@ -825,6 +1030,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("profile", bundle: bundle, comment: "")
+      }
+
+      /// Value: Proposal
+      static func filterProposal(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.proposal", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.proposal"
+        }
+
+        return NSLocalizedString("filter.proposal", bundle: bundle, comment: "")
       }
 
       /// Value: Proposals
@@ -851,6 +1069,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("repeat.password", bundle: bundle, comment: "")
+      }
+
+      /// Value: Request
+      static func filterRequest(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("filter.request", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "filter.request"
+        }
+
+        return NSLocalizedString("filter.request", bundle: bundle, comment: "")
       }
 
       /// Value: Request's title
@@ -903,6 +1134,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("sign.up", bundle: bundle, comment: "")
+      }
+
+      /// Value: Title
+      static func createTitlePlaceholder(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("create.title.placeholder", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "create.title.placeholder"
+        }
+
+        return NSLocalizedString("create.title.placeholder", bundle: bundle, comment: "")
       }
 
       /// Value: What do you want to create?
@@ -997,6 +1241,7 @@ struct _R: Rswift.Validatable {
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
+          if UIKit.UIColor(named: "black", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Color named 'black' is used in storyboard 'DMPopUpPicker', but couldn't be loaded.") }
         }
         if _R.storyboard.dmPopUpPicker().dmPopUpPicker() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'dmPopUpPicker' could not be loaded from storyboard 'DMPopUpPicker' as 'DMPopUpPicker'.") }
       }

@@ -18,7 +18,7 @@ final class DMSearchHeaderView: UIView {
     // MARK: - UI
     private let searchView: UISearchTextField = {
         let view = UISearchTextField()
-        view.placeholder = "I'm looking for..."
+        view.placeholder = AppText.searchPlaceholder()
         view.tintColor = AppColor.lightGray()
         view.backgroundColor = AppColor.superLightGray()
         return view

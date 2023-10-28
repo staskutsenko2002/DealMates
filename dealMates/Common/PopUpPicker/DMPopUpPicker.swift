@@ -144,7 +144,7 @@ extension DMPopUpPicker: UIPickerViewDelegate, UIPickerViewDataSource {
 		label.attributedText = NSAttributedString(
 			string: items.safelyRetrieve(elementAt: component)?.safelyRetrieve(elementAt: row) ?? "",
 			attributes: [
-				NSAttributedString.Key.foregroundColor: AppColor.white() ?? .white,
+				NSAttributedString.Key.foregroundColor: AppColor.black() ?? .black,
 				.font: optionsFont
 			])
 		return label

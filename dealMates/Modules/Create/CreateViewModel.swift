@@ -16,21 +16,29 @@ final class CreateViewModel {
         case loading
     }
     
-    let title: String
-    let networkService: NetworkServiceCreation
+    // MARK: - Exposed properties
     @Published var status: Status = .idle
+    let title: String
+    let networkService: NetworkServiceCreation & NetworkServiceUserInfo
     let onUpdateCategories = PassthroughSubject<Void, Never>()
     
+    var isBackHidden: Bool {
+        !(networkService.isExecutor ?? false)
+    }
+    
+    // MARK: - Private properties
     private let creationType: CreationType
     private(set) var categories = [Category]()
     private var cancellables = Set<AnyCancellable>()
     
+    // MARK: - Init
     init(creationType: CreationType) {
         self.title = AppText.create()
         self.creationType = creationType
         self.networkService = NetworkService.shared
     }
     
+    // MARK: - Exposed methods
     func getCategories() {
         networkService.getCategories()
             .sink { [weak self] result in
@@ -46,6 +54,10 @@ final class CreateViewModel {
             } receiveValue: { [weak self] response in
                 self?.categories = response.result
             }.store(in: &cancellables)
+    }
+    
+    func addImage() {
+        
     }
     
     func create(title: String, desc: String, category: String, price: String) {

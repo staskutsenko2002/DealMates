@@ -12,64 +12,61 @@ final class DMButton: UIButton {
         case filled
         case sketched(color: UIColor?)
     }
-
-    private enum Constants {
-        static let fontSize = CGFloat(18)
-        static let font = UIFont.handoSoft(size: 18, weight: .bold)
-        static let shimmerLayerName: String = "shimmerLayer"
-    }
-
-    // MARK: Properties
+    
+    // MARK: - Exposed Properties
     var variant: DMButton.Variant = .filled {
         didSet {
             updateStyle()
         }
     }
-
+    
     // MARK: - Overrides
     override var isEnabled: Bool {
         didSet {
             updateStyle()
         }
     }
-
+    
     override var isHighlighted: Bool {
         didSet {
             updateStyle()
         }
     }
-
-    override func draw(_ rect: CGRect) {
-        self.updateStyle()
-        super.draw(rect)
-    }
-
-    // MARK: - Initiazlizers
+    
+    // MARK: - Init
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
         setupDefaultValues()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setupDefaultValues()
     }
+    
+    // MARK: - Override methods
+    override func draw(_ rect: CGRect) {
+        self.updateStyle()
+        super.draw(rect)
+    }
+}
 
-    // MARK: - Functions
-    private func setupDefaultValues() {
-        layer.cornerRadius = 0
+// MARK: - Private methods
+private extension DMButton {
+    func setupDefaultValues() {
+        layer.cornerRadius = 10
         clipsToBounds = true
     }
 
-    private func updateStyle() {
+    func updateStyle() {
         if let titleLabel = self.titleLabel {
             titleLabel.textAlignment = .center
-            titleLabel.font = Constants.font
+            titleLabel.font = .handoSoft(size: 18, weight: .bold)
         }
 
         switch self.variant {
         case .sketched(let color):
-            layer.borderWidth = 2
+            layer.borderWidth = 1
             layer.borderColor = color?.cgColor
             setTitleColor(color, for: .normal)
             backgroundColor = AppColor.white()

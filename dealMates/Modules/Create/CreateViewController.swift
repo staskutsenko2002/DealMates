@@ -13,16 +13,23 @@ final class CreateViewController: UIViewController {
     private var cancellables = Set<AnyCancellable>()
     
     private lazy var headerView: DMHeaderView = {
-        let view = DMHeaderView(title: AppText.create(), leftItem: .init(image: AppImage.arrowLeft(), action: { [weak self] in
+        let item = DMHeaderView.HeaderItem(image: AppImage.arrowLeft(), action: { [weak self] in
             guard let self else { return }
             self.navigationController?.popViewController(animated: true)
-        }))
+        })
+        
+        let view = DMHeaderView(title: AppText.create(), leftItem: viewModel.isBackHidden ? nil : item)
         return view
     }()
     
-    private let loadingIndincator = UIActivityIndicatorView()
+    private lazy var photoUploadView: DMPhotoUploadView = {
+        let view = DMPhotoUploadView(buttonAction: { [weak self] in
+            self?.viewModel.addImage()
+        })
+        return view
+    }()
     
-    private let titleField = UIComponentsFactory.makeDMTextField(placeholder: "Title")
+    private let titleField = UIComponentsFactory.makeDMTextField(placeholder: AppText.createTitlePlaceholder())
     private let categoryField = UIComponentsFactory.makeDMTextFieldWithPopUpPicker(placeholder: AppText.category(), items: [])
 
     private let descriptionField = UIComponentsFactory.makeDMTextView(placeholder: AppText.description())
@@ -36,8 +43,12 @@ final class CreateViewController: UIViewController {
         return button
     }()
     
+    private let loadingIndincator = UIActivityIndicatorView()
+    
+    // MARK: - Private properties
     private let viewModel: CreateViewModel
     
+    // MARK: - Life cycle
     init(viewModel: CreateViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -62,35 +73,39 @@ private extension CreateViewController {
     func setupLayout() {
         let safeArea = view.safeAreaLayoutGuide
         
-        view.add(views: [headerView, titleField, categoryField, descriptionField, priceField, createButton], constraints: [
+        view.add(views: [headerView, photoUploadView, titleField, categoryField, descriptionField, priceField, createButton], constraints: [
             headerView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             headerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             headerView.heightAnchor.constraint(equalToConstant: 60),
             
-            titleField.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: 30),
-            titleField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            photoUploadView.topAnchor.constraint(equalTo: headerView.bottomAnchor, constant: Margins.xLarge),
+            photoUploadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            photoUploadView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
+            
+            titleField.topAnchor.constraint(equalTo: photoUploadView.bottomAnchor, constant: Margins.large),
+            titleField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            titleField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             titleField.heightAnchor.constraint(equalToConstant: 50),
             
-            categoryField.topAnchor.constraint(equalTo: titleField.bottomAnchor, constant: 30),
-            categoryField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            categoryField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            categoryField.topAnchor.constraint(equalTo: titleField.bottomAnchor, constant: Margins.xLarge),
+            categoryField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            categoryField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             categoryField.heightAnchor.constraint(equalToConstant: 50),
             
-            descriptionField.topAnchor.constraint(equalTo: categoryField.bottomAnchor, constant: 30),
-            descriptionField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            descriptionField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            descriptionField.topAnchor.constraint(equalTo: categoryField.bottomAnchor, constant: Margins.xLarge),
+            descriptionField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            descriptionField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             descriptionField.heightAnchor.constraint(equalToConstant: 150),
             
-            priceField.topAnchor.constraint(equalTo: descriptionField.bottomAnchor, constant: 30),
-            priceField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            priceField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            priceField.topAnchor.constraint(equalTo: descriptionField.bottomAnchor, constant: Margins.xLarge),
+            priceField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            priceField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             priceField.heightAnchor.constraint(equalToConstant: 50),
             
-            createButton.topAnchor.constraint(equalTo: priceField.bottomAnchor, constant: 30),
-            createButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            createButton.topAnchor.constraint(equalTo: priceField.bottomAnchor, constant: Margins.xLarge),
+            createButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
+            createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             createButton.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
@@ -104,13 +119,13 @@ private extension CreateViewController {
                 case .error(let message):
                     self.stopLoading()
                     let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default)
+                    let action = UIAlertAction(title: AppText.okay(), style: .default)
                     alert.addAction(action)
                     self.present(alert, animated: true)
                     
                 case .created:
                     let alert = UIAlertController(title: "Success!", message: "Creation went successful!", preferredStyle: .alert)
-                    let action = UIAlertAction(title: "OK", style: .default)
+                    let action = UIAlertAction(title: AppText.okay(), style: .default)
                     alert.addAction(action)
                     self.present(alert, animated: true)
                     
@@ -158,7 +173,7 @@ private extension CreateViewController {
         guard !titleField.input.isEmpty, !descriptionField.input.isEmpty, !categoryField.input.isEmpty,
               !priceField.input.isEmpty else {
             let alert = UIAlertController(title: "Oops!", message: "Some fields are empty!", preferredStyle: .alert)
-            let action = UIAlertAction(title: "OK", style: .default)
+            let action = UIAlertAction(title: AppText.okay(), style: .default)
             alert.addAction(action)
             present(alert, animated: true)
             return

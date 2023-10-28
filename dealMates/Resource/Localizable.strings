@@ -36,6 +36,7 @@
 "category" = "Category";
 "description" = "Description";
 "price" = "Price";
+"addPhotos.button" = "Add Photos";
 
 // MARK: - Profile
 "edit.profile" = "Edit Profile";
@@ -45,3 +46,27 @@
 
 // MARK: - Create
 "create.question" = "What do you want to create?";
+"create.title.placeholder" = "Title";
+
+// MARK: - Filter
+"filter.title" = "Filters";
+
+"filter.proposal" = "Proposal";
+"filter.request" = "Request";
+
+"filter.price" = "Price";
+"filter.currency" = "Currency";
+"filter.minPrice" = "Min Price";
+"filter.maxPrice" = "Max Price";
+
+"filter.experience" = "Experience";
+"filter.minExperience" = "Min Experience";
+"filter.maxExperience" = "Max Experience";
+
+"filter.apply.button" = "Apply";
+
+// MARK: - Search
+"search.placeholder" = "I'm looking for...";
+
+// MARK: - Common
+"okay" = "Okay";

@@ -14,7 +14,7 @@ final class FavouriteViewController: UIViewController {
     private var currentElementIndex: Int
     
     private let headerView: DMHeaderView = {
-        let view = DMHeaderView(title: AppText.projectName())
+        let view = DMHeaderView(title: AppText.favourites())
         return view
     }()
     

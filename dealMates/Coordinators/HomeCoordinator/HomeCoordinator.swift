@@ -11,12 +11,13 @@ final class HomeCoordinator {
     private lazy var navigationController = makeNavigationController()
     private lazy var homeViewController = makeHomeViewController()
     
+    // MARK: - Exposed methods
     func start() -> UINavigationController {
         return navigationController
     }
 }
 
-// MARK: - Private
+// MARK: - Private methods
 private extension HomeCoordinator {
     func makeNavigationController() -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: homeViewController)
@@ -34,8 +35,8 @@ private extension HomeCoordinator {
         let viewController = HomeViewController(
             viewModel: viewModel,
             viewControllers: [
-                ("Proposals", makeProposalListViewController()),
-                ("Requests", makeRequestsListViewController()),
+                (AppText.proposals(), makeProposalListViewController()),
+                (AppText.requests(), makeRequestsListViewController()),
             ]
         )
         return viewController
@@ -67,8 +68,17 @@ private extension HomeCoordinator {
     }
     
     func makeSearchViewController(query: String) -> UIViewController {
-        let viewModel = SearchViewModel(query: query)
+        let viewModel = SearchViewModel(query: query, filterAction: { [weak self] in
+            self?.presentFilter()
+        })
         let viewController = SearchViewController(viewModel: viewModel)
         return viewController
+    }
+    
+    func presentFilter() {
+        let viewModel = FilterViewModel()
+        let viewContoller = FilterViewController(viewModel: viewModel)
+        viewContoller.modalPresentationStyle = .fullScreen
+        navigationController.present(viewContoller, animated: true)
     }
 }

@@ -8,10 +8,18 @@
 import Foundation
 
 final class SearchViewModel {
+    // MARK: - Exposed properties
+    private(set) var query: String
+    private let filterAction: VoidCallback
     
-    var query: String
-    
-    init(query: String) {
+    // MARK: - Init
+    init(query: String, filterAction: @escaping VoidCallback) {
         self.query = query
+        self.filterAction = filterAction
+    }
+    
+    // MARK: - Exposed methods
+    func pressFilter() {
+        filterAction()
     }
 }

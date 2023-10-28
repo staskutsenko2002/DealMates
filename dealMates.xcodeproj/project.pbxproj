@@ -88,6 +88,10 @@
 		85B661AA2AD3029200EDD3EF /* DMHomeSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */; };
 		85B661AC2AD3082600EDD3EF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661AB2AD3082600EDD3EF /* String+Extension.swift */; };
 		85D605B82AED4CB900E09687 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605B72AED4CB900E09687 /* CustomTextView.swift */; };
+		85D605BB2AED4F6E00E09687 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605BA2AED4F6E00E09687 /* FilterViewController.swift */; };
+		85D605BD2AED4F7700E09687 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605BC2AED4F7700E09687 /* FilterViewModel.swift */; };
+		85D605C12AED98DD00E09687 /* DMPhotoUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605C02AED98DD00E09687 /* DMPhotoUploadView.swift */; };
+		85D605C32AED9A4600E09687 /* DMUnderlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605C22AED9A4600E09687 /* DMUnderlinedButton.swift */; };
 		85E1B66C2A3B88EA00221AF6 /* ProposalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */; };
 		85E1B66E2A3B88FF00221AF6 /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */; };
 		85E1B6712A3BA13900221AF6 /* CreateChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */; };
@@ -208,6 +212,10 @@
 		85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeSearchHeaderView.swift; sourceTree = "<group>"; };
 		85B661AB2AD3082600EDD3EF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		85D605B72AED4CB900E09687 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		85D605BA2AED4F6E00E09687 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
+		85D605BC2AED4F7700E09687 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		85D605C02AED98DD00E09687 /* DMPhotoUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMPhotoUploadView.swift; sourceTree = "<group>"; };
+		85D605C22AED9A4600E09687 /* DMUnderlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMUnderlinedButton.swift; sourceTree = "<group>"; };
 		85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewController.swift; sourceTree = "<group>"; };
 		85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChooseViewController.swift; sourceTree = "<group>"; };
@@ -399,6 +407,7 @@
 		857F1B2C2A1004B2004A97CC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				85D605B92AED4F6100E09687 /* Filter */,
 				85B661A12AD2F82E00EDD3EF /* Search */,
 				85E1B6802A3C994500221AF6 /* EditProfile */,
 				85E1B66F2A3BA11200221AF6 /* CreateChoose */,
@@ -445,12 +454,14 @@
 		8584B0AB2A093C2C00CD44AC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				85D605BF2AED98BD00E09687 /* PhotoUploadView */,
 				8512C1612A2CCEC000CF8DC1 /* SegmentedView.swift */,
 				8512C1552A2C8F9600CF8DC1 /* StringValidationRules.swift */,
 				85A8A8312A37B54800EC47B2 /* VisualEffectView.swift */,
-				8584B0AC2A093C4000CD44AC /* DMButton.swift */,
+				85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */,
 				85F9E5372A3123DB006F9A18 /* PageStateView.swift */,
 				85D605B52AED4C7F00E09687 /* Text */,
+				85D605BE2AED987900E09687 /* Button */,
 				85A8A82A2A37B32300EC47B2 /* PopUpPicker */,
 				8512C1572A2CBEDC00CF8DC1 /* DMHeaderView */,
 			);
@@ -632,7 +643,6 @@
 			children = (
 				85B661A22AD2F83E00EDD3EF /* SearchViewController.swift */,
 				85B661A42AD2F85800EDD3EF /* SearchViewModel.swift */,
-				85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -653,6 +663,32 @@
 				85D605B72AED4CB900E09687 /* CustomTextView.swift */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		85D605B92AED4F6100E09687 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				85D605BA2AED4F6E00E09687 /* FilterViewController.swift */,
+				85D605BC2AED4F7700E09687 /* FilterViewModel.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		85D605BE2AED987900E09687 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				8584B0AC2A093C4000CD44AC /* DMButton.swift */,
+				85D605C22AED9A4600E09687 /* DMUnderlinedButton.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		85D605BF2AED98BD00E09687 /* PhotoUploadView */ = {
+			isa = PBXGroup;
+			children = (
+				85D605C02AED98DD00E09687 /* DMPhotoUploadView.swift */,
+			);
+			path = PhotoUploadView;
 			sourceTree = "<group>";
 		};
 		85E1B66A2A3B88D000221AF6 /* Proposal */ = {
@@ -955,6 +991,7 @@
 				85A8A8292A37B2A900EC47B2 /* DMTextFieldWithPopupPicker.swift in Sources */,
 				8512C1562A2C8F9600CF8DC1 /* StringValidationRules.swift in Sources */,
 				857F1B1F2A100160004A97CC /* HomeViewController.swift in Sources */,
+				85D605BD2AED4F7700E09687 /* FilterViewModel.swift in Sources */,
 				8584B0AD2A093C4000CD44AC /* DMButton.swift in Sources */,
 				85AE8FE82A0686F200FF7773 /* AppCoordinator.swift in Sources */,
 				8512C1672A2CDDB700CF8DC1 /* RequestListViewController.swift in Sources */,
@@ -969,6 +1006,7 @@
 				857F1B122A0FAE8F004A97CC /* SignUpViewController.swift in Sources */,
 				857F1B162A0FB73B004A97CC /* SignInViewModel.swift in Sources */,
 				85A8A8482A37DDAE00EC47B2 /* NetworkService+Profile.swift in Sources */,
+				85D605C12AED98DD00E09687 /* DMPhotoUploadView.swift in Sources */,
 				85E1B67A2A3BB05C00221AF6 /* NetworkService+Creation.swift in Sources */,
 				85B661AC2AD3082600EDD3EF /* String+Extension.swift in Sources */,
 				85AE8FD42A06865C00FF7773 /* AppDelegate.swift in Sources */,
@@ -997,8 +1035,10 @@
 				85F9E5342A31151E006F9A18 /* Constants.swift in Sources */,
 				853B4F292A2B5B8400F6697D /* AuthTargetParams.swift in Sources */,
 				85B661A32AD2F83E00EDD3EF /* SearchViewController.swift in Sources */,
+				85D605BB2AED4F6E00E09687 /* FilterViewController.swift in Sources */,
 				85A8A8272A37AF5C00EC47B2 /* CreateViewModel.swift in Sources */,
 				85A8A83E2A37BA0500EC47B2 /* DMTextView.swift in Sources */,
+				85D605C32AED9A4600E09687 /* DMUnderlinedButton.swift in Sources */,
 				8562A1372A33D7BF00A3E36A /* RequestTarget.swift in Sources */,
 				85AE8FF22A068A9400FF7773 /* Typealias.swift in Sources */,
 				85A8A8432A37D26B00EC47B2 /* ProfileViewModel.swift in Sources */,

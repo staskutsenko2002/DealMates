@@ -25,7 +25,7 @@ final class DMHomeSearchHeaderView: UIView {
     private let titleLabel: UILabel = {
         let title = UILabel()
         title.textColor = AppColor.black()
-        title.font = .handoSoft(size: 24, weight: .bold)
+        title.font = .handoSoft(size: 25, weight: .bold)
         return title
     }()
     

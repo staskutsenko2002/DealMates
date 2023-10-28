@@ -12,7 +12,7 @@ import IQKeyboardManager
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        IQKeyboardManager.shared().isEnabled = true
+        setupKeyboard()
         return true
     }
 
@@ -24,3 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 
+// MARK: - Private methods
+private extension AppDelegate {
+    func setupKeyboard() {
+        IQKeyboardManager.shared().isEnabled = true
+    }
+}
