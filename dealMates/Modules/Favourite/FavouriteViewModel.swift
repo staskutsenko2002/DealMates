@@ -11,7 +11,14 @@ final class FavouriteViewModel {
     
     let title: String
     
-    init() {
+    var isExecutor: Bool {
+        networkService.isExecutor ?? false
+    }
+    
+    private let networkService: NetworkServiceUserInfo
+    
+    init(networkService: NetworkServiceUserInfo) {
+        self.networkService = networkService
         self.title = AppText.favourites()
     }
 }

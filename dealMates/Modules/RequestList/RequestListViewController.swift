@@ -20,6 +20,7 @@ final class RequestListViewController: UIViewController {
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
         tableView.separatorStyle = .none
+        tableView.showsVerticalScrollIndicator = false
         return tableView
     }()
     

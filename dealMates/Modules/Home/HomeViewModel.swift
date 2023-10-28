@@ -10,6 +10,7 @@ import Foundation
 final class HomeViewModel {
     
     let title: String
+    
     var isExecutor: Bool {
         networkService.isExecutor ?? false
     }

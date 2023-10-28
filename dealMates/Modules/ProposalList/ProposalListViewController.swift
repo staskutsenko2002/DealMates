@@ -32,6 +32,8 @@ final class ProposalListViewController: UIViewController {
         collectionView.refreshControl = refreshControl
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(ProposalCollectionViewCell.self)
         return collectionView
     }()

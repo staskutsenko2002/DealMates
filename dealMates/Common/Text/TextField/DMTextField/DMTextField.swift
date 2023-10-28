@@ -324,8 +324,10 @@ class DMTextField: UIView {
 		setupConstraints.forEach { $0.isActive = true }
 		connectIBDesignables()
 		textField.delegate = self
-        textField.layer.borderWidth = 2
+        textField.layer.cornerRadius = 10
+        textField.tintColor = .black
         textField.font = .handoSoft(size: 18, weight: .bold)
+        textField.addShadowAround()
         textField.leftView = UIView(frame: .init(x: 0, y: 0, width: 15, height: 0))
         textField.leftViewMode = .always
 		textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
@@ -438,7 +440,6 @@ class DMTextField: UIView {
 		}
 	}
 
-	// MARK: TextField methods
 	@objc func textFieldDidChanged() {
 		didChangeCallback?(input)
 	}
@@ -540,12 +541,7 @@ final class DMCustomTextField: UITextField {
 	private let sideViewToTextSpacing: CGFloat = 15
 
 	override func textRect(forBounds bounds: CGRect) -> CGRect {
-		return bounds.inset(by: UIEdgeInsets(
-			top: 0,
-			left: 20,
-			bottom: 0,
-			right: 20)
-		)
+        return bounds.inset(by: UIEdgeInsets(top: 0, left: Margins.large, bottom: 0, right: Margins.large))
 	}
 
 	override func editingRect(forBounds bounds: CGRect) -> CGRect {

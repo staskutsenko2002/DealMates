@@ -87,6 +87,7 @@
 		85B661A72AD2FAC800EDD3EF /* DMSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */; };
 		85B661AA2AD3029200EDD3EF /* DMHomeSearchHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */; };
 		85B661AC2AD3082600EDD3EF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B661AB2AD3082600EDD3EF /* String+Extension.swift */; };
+		85D605B82AED4CB900E09687 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D605B72AED4CB900E09687 /* CustomTextView.swift */; };
 		85E1B66C2A3B88EA00221AF6 /* ProposalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */; };
 		85E1B66E2A3B88FF00221AF6 /* ProposalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */; };
 		85E1B6712A3BA13900221AF6 /* CreateChooseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */; };
@@ -206,6 +207,7 @@
 		85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMSearchHeaderView.swift; sourceTree = "<group>"; };
 		85B661A92AD3029200EDD3EF /* DMHomeSearchHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMHomeSearchHeaderView.swift; sourceTree = "<group>"; };
 		85B661AB2AD3082600EDD3EF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		85D605B72AED4CB900E09687 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 		85E1B66B2A3B88EA00221AF6 /* ProposalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewController.swift; sourceTree = "<group>"; };
 		85E1B66D2A3B88FF00221AF6 /* ProposalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProposalViewModel.swift; sourceTree = "<group>"; };
 		85E1B6702A3BA13900221AF6 /* CreateChooseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateChooseViewController.swift; sourceTree = "<group>"; };
@@ -448,7 +450,7 @@
 				85A8A8312A37B54800EC47B2 /* VisualEffectView.swift */,
 				8584B0AC2A093C4000CD44AC /* DMButton.swift */,
 				85F9E5372A3123DB006F9A18 /* PageStateView.swift */,
-				85A8A83C2A37B9FA00EC47B2 /* TextField */,
+				85D605B52AED4C7F00E09687 /* Text */,
 				85A8A82A2A37B32300EC47B2 /* PopUpPicker */,
 				8512C1572A2CBEDC00CF8DC1 /* DMHeaderView */,
 			);
@@ -488,7 +490,6 @@
 			children = (
 				8584B0B02A093F9B00CD44AC /* DMTextField */,
 				85A8A8282A37B2A900EC47B2 /* DMTextFieldWithPopupPicker.swift */,
-				85A8A83D2A37BA0500EC47B2 /* DMTextView.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -634,6 +635,24 @@
 				85B661A62AD2FAC800EDD3EF /* DMSearchHeaderView.swift */,
 			);
 			path = Search;
+			sourceTree = "<group>";
+		};
+		85D605B52AED4C7F00E09687 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				85D605B62AED4C8900E09687 /* TextView */,
+				85A8A83C2A37B9FA00EC47B2 /* TextField */,
+			);
+			path = Text;
+			sourceTree = "<group>";
+		};
+		85D605B62AED4C8900E09687 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				85A8A83D2A37BA0500EC47B2 /* DMTextView.swift */,
+				85D605B72AED4CB900E09687 /* CustomTextView.swift */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 		85E1B66A2A3B88D000221AF6 /* Proposal */ = {
@@ -900,6 +919,7 @@
 				853B4F2F2A2B638200F6697D /* NetworkService+Token.swift in Sources */,
 				85A8A8362A37B60500EC47B2 /* UIStoryboard+Extension.swift in Sources */,
 				857F1B252A1002C1004A97CC /* CreateViewController.swift in Sources */,
+				85D605B82AED4CB900E09687 /* CustomTextView.swift in Sources */,
 				85F9E5302A311062006F9A18 /* NetworkService+Proposal.swift in Sources */,
 				853B4F342A2B702300F6697D /* AuthCoodrinator.swift in Sources */,
 				85F9E5322A3110EB006F9A18 /* ProposalResponse.swift in Sources */,

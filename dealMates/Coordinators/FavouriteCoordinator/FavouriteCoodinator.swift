@@ -25,7 +25,7 @@ private extension FavouriteCoodinator {
     }
     
     func makeFavouriteViewController() -> UIViewController {
-        let viewModel = FavouriteViewModel()
+        let viewModel = FavouriteViewModel(networkService: NetworkService.shared)
         let viewController = FavouriteViewController(
             viewModel: viewModel,
             viewControllers: [
