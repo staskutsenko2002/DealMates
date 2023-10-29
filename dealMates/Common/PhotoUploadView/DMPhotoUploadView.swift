@@ -63,6 +63,7 @@ private extension DMPhotoUploadView {
         backgroundColor = AppColor.mediumLightGray()
         layer.cornerRadius = 8
         isUserInteractionEnabled = true
+        addShadowAround()
     }
 }
 

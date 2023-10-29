@@ -83,27 +83,23 @@ private extension CreateViewController {
             photoUploadView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             photoUploadView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             
-            titleField.topAnchor.constraint(equalTo: photoUploadView.bottomAnchor, constant: Margins.large),
+            titleField.topAnchor.constraint(equalTo: photoUploadView.bottomAnchor, constant: Margins.xMedium),
             titleField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             titleField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
-            titleField.heightAnchor.constraint(equalToConstant: 50),
             
-            categoryField.topAnchor.constraint(equalTo: titleField.bottomAnchor, constant: Margins.xLarge),
+            categoryField.topAnchor.constraint(equalTo: titleField.bottomAnchor, constant: Margins.xMedium),
             categoryField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             categoryField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
-            categoryField.heightAnchor.constraint(equalToConstant: 50),
             
-            descriptionField.topAnchor.constraint(equalTo: categoryField.bottomAnchor, constant: Margins.xLarge),
+            descriptionField.topAnchor.constraint(equalTo: categoryField.bottomAnchor, constant: Margins.medium),
             descriptionField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             descriptionField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
-            descriptionField.heightAnchor.constraint(equalToConstant: 150),
             
-            priceField.topAnchor.constraint(equalTo: descriptionField.bottomAnchor, constant: Margins.xLarge),
+            priceField.topAnchor.constraint(equalTo: descriptionField.bottomAnchor, constant: Margins.xMedium),
             priceField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             priceField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
-            priceField.heightAnchor.constraint(equalToConstant: 50),
             
-            createButton.topAnchor.constraint(equalTo: priceField.bottomAnchor, constant: Margins.xLarge),
+            createButton.topAnchor.constraint(equalTo: priceField.bottomAnchor, constant: Margins.xMedium),
             createButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: Margins.large),
             createButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -Margins.large),
             createButton.heightAnchor.constraint(equalToConstant: 40),

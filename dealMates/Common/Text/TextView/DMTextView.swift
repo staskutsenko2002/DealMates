@@ -184,7 +184,7 @@ final class DMTextView: UIView, Validatable {
     }
     
     override var intrinsicContentSize: CGSize {
-        let height = Margins.large + Sizes.xBig + Margins.xSmall + errorMessageLabel.intrinsicContentSize.height
+        let height = Margins.large + Sizes.bigPlus + Margins.xSmall + errorMessageLabel.intrinsicContentSize.height
         return CGSize(width: UIView.noIntrinsicMetric, height: height)
     }
     
@@ -275,7 +275,7 @@ private extension DMTextView {
             textView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: +15),
             textView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
 
-            textView.heightAnchor.constraint(equalToConstant: Sizes.xBig),
+            textView.heightAnchor.constraint(equalToConstant: Sizes.bigPlus),
 
             placeholderToPlaceInTextView,
             placeholderLeadingConstraint,

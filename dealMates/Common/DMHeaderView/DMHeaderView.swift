@@ -57,7 +57,7 @@ final class DMHeaderView: UIView {
                 button.widthAnchor.constraint(equalToConstant: 16),
                 button.centerYAnchor.constraint(equalTo: centerYAnchor)
             ])
-        }
+        }        
     }
     
     required init?(coder: NSCoder) {
